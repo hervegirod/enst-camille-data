@@ -9,10 +9,10 @@ description 'ENST Camille Voice Data'
 
 repositories {
     ivy {
-        url 'https://github.com/marytts'
+        url 'https://github.com/marytts/enst-camille-data'
         layout 'pattern', {
-            ivy '[module]/releases/download/v[revision]/ivy-[revision].xml'
-            artifact '[module]/releases/download/v[revision]/[module]-[revision].[ext]'
+            ivy 'releases/download/v[revision]/ivy-[revision].xml'
+            artifact 'releases/download/v[revision]/[module]-[revision].[ext]'
         }
     }
 }
