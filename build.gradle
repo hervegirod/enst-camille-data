@@ -1,5 +1,6 @@
 plugins {
     id 'org.m2ci.msp.flaml' version '0.3.0'
+    id 'de.dfki.mary.voicebuilding.marytts-kaldi-mfa'
     id 'ivy-publish'
 }
 
@@ -44,6 +45,18 @@ artifacts {
     'default' generateFlac.flacFile, {
         builtBy generateFlac
     }
+}
+
+extractWavFiles {
+    dependsOn unpackData
+}
+
+convertTextToMaryXml {
+    srcDir = extractTextFiles.destDir
+}
+
+prepareForcedAlignment {
+    wavDir = extractWavFiles.destDir
 }
 
 publishing {
