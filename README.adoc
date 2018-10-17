@@ -38,13 +38,13 @@ For example,
 
 [source,yaml]
 ----
-- prompt: text_0366
-  text: les alpinistes installent un bivouac au pied de la montagne .
-  date: 2013-06-17T15:34:58Z
-  start: 3185.5455782309
-  end: 3191.814965986
-  segments:
-  - { lab: _, dur: 0.614969 }
+- prompt: text_0366 # <1>
+  text: les alpinistes installent un bivouac au pied de la montagne . # <2>
+  date: 2013-06-17T15:34:58Z # <3>
+  start: 3185.5455782309 # <4>
+  end: 3191.814965986 # <4>
+  segments: # <5>
+  - { lab: _, dur: 0.614969 } # <6>
   - { lab: l, dur: 0.08 }
   - { lab: e, dur: 0.135 }
   - { lab: a, dur: 0.09 }
@@ -58,6 +58,12 @@ For example,
   - { lab: '@', dur: 0.115 }
   # etc.
 ----
+<1> prompt code (file basename)
+<2> utterance text
+<3> recording date
+<4> utterance start and end times (in seconds) in the FLAC file
+<5> phonetic segments
+<6> segment label and duration (in seconds)
 
 Extracting the corpus
 ~~~~~~~~~~~~~~~~~~~~~
