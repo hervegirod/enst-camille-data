@@ -24,6 +24,7 @@ configurations {
 
 dependencies {
     data group: 'de.dfki.mary', name: 'enst-camille-data', version: '0.2-rc1', ext: 'flac'
+    marytts group: 'de.dfki.mary', name: 'marytts-lang-fr', version: '5.2'
 }
 
 task unpackData(type: Copy) {
@@ -53,6 +54,7 @@ extractWavFiles {
 
 convertTextToMaryXml {
     srcDir = extractTextFiles.destDir
+    locale = Locale.FRENCH
 }
 
 prepareForcedAlignment {
