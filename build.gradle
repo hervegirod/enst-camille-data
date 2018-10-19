@@ -61,6 +61,11 @@ prepareForcedAlignment {
     wavDir = extractWavFiles.destDir
 }
 
+injectSegments {
+    labDir = convertTextGridToXLab.destDir
+    yamlDestFile = flaml.yamlFile
+}
+
 publishing {
     publications {
         flaml(IvyPublication) {
